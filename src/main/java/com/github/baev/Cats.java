@@ -12,8 +12,8 @@ import java.util.List;
  * @author Dmitry Baev charlie@yandex-team.ru
  *         Date: 17.04.15
  */
-@Plugin.Name("my-plugin")
-public class MyPlugin implements ProcessPlugin<AllureTestCase> {
+@Plugin.Name("cats")
+public class Cats implements ProcessPlugin<AllureTestCase> {
 
     public void process(AllureTestCase data) {
         //do nothing
@@ -21,7 +21,7 @@ public class MyPlugin implements ProcessPlugin<AllureTestCase> {
 
     public List<PluginData> getPluginData() {
         return Collections.singletonList(
-                new PluginData("my-plugin.json", new MyPluginContent("MY_PLUGIN_CONTENT"))
+                new PluginData("cats.json", new MyPluginContent("MY_PLUGIN_CONTENT"))
         );
     }
 
