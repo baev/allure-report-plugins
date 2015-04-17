@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>@project.groupId@.@project.artifactId@</groupId>
-    <artifactId>sample-generate-with-plugin</artifactId>
+    <artifactId>sample</artifactId>
     <version>@project.version@</version>
 
     <properties>
