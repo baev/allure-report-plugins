@@ -7,7 +7,8 @@
         testcaseProvider.attachStates('cats');
         allureTabsProvider.addTranslation('cats');
     });
-    module.controller('CatsCtrl', function($scope, $state, data) {
+    module.controller('CatsCtrl', function($scope, $state) {
         "use strict";
+        //you can use this controller as well as you want
     });
 })();
