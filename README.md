@@ -20,7 +20,7 @@ This example shows how you can load and use other dependencies. Also in this exa
 user styles and scripts are minimized. So in feature I plan to make some thing (I guess maven plugin)
 which helps you to manage your java script dependencies and minimizing.
 
-![2015-04-20 18 21 47](https://cloud.githubusercontent.com/assets/2149631/7233611/b24ca10c-e78a-11e4-9c78-f3a15f50add3.png)
+![2015-04-20 18 27 13](https://cloud.githubusercontent.com/assets/2149631/7233650/ea38354a-e78a-11e4-8d01-155ad47d475a.png)
 
 ### Attachments
 
