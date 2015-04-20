@@ -19,30 +19,33 @@
 
     <modules>
         <module>cats-plugin</module>
+        <module>testcase-cloud-plugin</module>
     </modules>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-invoker-plugin</artifactId>
-                <version>1.9</version>
-                <configuration>
-                    <settingsFile>src/it/settings.xml</settingsFile>
-                    <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
-                    <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-                    <streamLogs>true</streamLogs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>install</goal>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-invoker-plugin</artifactId>
+                    <version>1.9</version>
+                    <configuration>
+                        <settingsFile>src/it/settings.xml</settingsFile>
+                        <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                        <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+                        <streamLogs>true</streamLogs>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>integration-test</id>
+                            <goals>
+                                <goal>install</goal>
+                                <goal>run</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
