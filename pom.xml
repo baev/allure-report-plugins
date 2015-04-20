@@ -21,6 +21,7 @@
         <module>cats-plugin</module>
         <module>testcase-cloud-plugin</module>
         <module>attachments-plugin</module>
+        <module>all-in-one</module>
     </modules>
 
     <build>
