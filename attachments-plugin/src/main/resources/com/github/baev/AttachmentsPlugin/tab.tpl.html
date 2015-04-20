@@ -10,7 +10,8 @@
             </div>
             <div class="list-item clickable" ng-repeat="attachment in attachments" ng-click="setAttachment(attachment.uid)" ng-class="{active:attachment==$parent.attachment}">
                 <span ng-class="getIconClass(attachment.type)" tooltip="{{attachment.type}}"></span>
-                <span>{{attachment.title}}</span>
+                <span class="label label-default">{{attachment.type}}</span>
+                <span>{{attachment.title}} </span>
                 <a target="_blank" ng-click="$event.stopPropagation()" ng-href="{{'data/'+attachment.source}}" class="pull-right attachment_size">
                     <i class="fa fa-floppy-o"></i>
                     <i>{{attachment.size | filesize}}</i>
