@@ -12,7 +12,7 @@ import java.util.List;
  *         Date: 17.04.15
  */
 @Plugin.Name("cats")
-public class Cats extends TabPlugin {
+public class CatsPlugin extends TabPlugin {
 
     public void process(AllureTestCase data) {
         //do nothing

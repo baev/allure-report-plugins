@@ -1,0 +1,29 @@
+<div class="b-island tab-content-fill" pane-set ng-if="attachments.length > 0">
+    <div class="pane_col defects_list" pane pane-expanded="isState('attachmentsList')" on-keynav="select($direction)">
+        <div class="pane_overlay clickable" ui-sref="attachmentsList"></div>
+        <div class="pane_content">
+            <div class="b-island__title">
+                {{'attachmentsList.TITLE_FULL' | translate}}
+            </div>
+            <div class="pane__header">
+                <h3>{{'attachmentsList.TITLE' | translate}}</h3>
+            </div>
+            <div class="list-item clickable" ng-repeat="attachment in attachments" ng-click="setAttachment(attachment.uid)" ng-class="{active:attachment==$parent.attachment}">
+                <span ng-class="getIconClass(attachment.type)" tooltip="{{attachment.type}}"></span>
+                <span>{{attachment.title}}</span>
+                <a target="_blank" ng-click="$event.stopPropagation()" ng-href="{{'data/'+attachment.source}}" class="pull-right attachment_size">
+                    <i class="fa fa-floppy-o"></i>
+                    <i>{{attachment.size | filesize}}</i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="pane_col" ng-if="attachment" pane pane-expanded="isState('attachmentsList.attachment.expanded')">
+        <div class="pane_content">
+            <ng-include src="'plugins/attachmentsList/attachment.html'"></ng-include>
+        </div>
+    </div>
+</div>
+<div class="tab-blank__text" ng-if="defects.length == 0">
+    <p>{{'attachmentsList.NO_ATTACHMENTS' | translate}}</p>
+</div>

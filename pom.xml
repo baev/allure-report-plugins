@@ -20,6 +20,7 @@
     <modules>
         <module>cats-plugin</module>
         <module>testcase-cloud-plugin</module>
+        <module>attachments-plugin</module>
     </modules>
 
     <build>
@@ -47,5 +48,17 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <target>1.7</target>
+                    <source>1.7</source>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
