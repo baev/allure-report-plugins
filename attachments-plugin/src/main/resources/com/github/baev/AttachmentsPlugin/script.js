@@ -7,12 +7,19 @@
         $stateProvider.state('attachmentsList.attachment', {
             url: '/:attachmentUid'
         });
+        $stateProvider.state('attachmentsList.attachment.expanded', {
+            url: '/expanded'
+        });
         allureTabsProvider.addTranslation('attachmentsList');
     }]);
     module.controller('AttachmentsListCtrl', ['$scope', '$state', 'data', function($scope, $state, data) {
         "use strict";
         $scope.attachments = data;
         var baseState = 'attachmentsList';
+
+        $scope.go = function(state) {
+            $state.go(state);
+        };
 
         $scope.setAttachment = function(attachmentUid) {
             $state.go(baseState + '.attachment', {attachmentUid: attachmentUid});
