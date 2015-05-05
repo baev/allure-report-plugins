@@ -9,7 +9,7 @@
     <version>@project.version@</version>
 
     <properties>
-        <allure.version>2.0.0-SNAPSHOT</allure.version>
+        <allure.version>@allure.version@</allure.version>
         <allure.report.directory>${project.build.directory}/allure-report</allure.report.directory>
     </properties>
 
