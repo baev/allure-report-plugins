@@ -3,12 +3,10 @@ package com.github.baev;
 import ru.yandex.qatools.allure.data.AllureAttachment;
 import ru.yandex.qatools.allure.data.AllureStep;
 import ru.yandex.qatools.allure.data.AllureTestCase;
+import ru.yandex.qatools.allure.data.plugins.DefaultTabPlugin;
 import ru.yandex.qatools.allure.data.plugins.Plugin;
-import ru.yandex.qatools.allure.data.plugins.PluginData;
-import ru.yandex.qatools.allure.data.plugins.TabPlugin;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,9 +14,10 @@ import java.util.List;
  *         Date: 20.04.15
  */
 @Plugin.Name("attachmentsList")
-public class AttachmentsPlugin extends TabPlugin {
+public class AttachmentsPlugin extends DefaultTabPlugin {
 
-    private List<AllureAttachment> attachments = new ArrayList<>();
+    @Plugin.Data
+    protected List<AllureAttachment> attachments = new ArrayList<>();
 
     public void process(AllureTestCase data) {
         for (AllureStep step : data.getSteps()) {
@@ -38,9 +37,5 @@ public class AttachmentsPlugin extends TabPlugin {
         for (AllureAttachment attachment : step.getAttachments()) {
             attachments.add(attachment);
         }
-    }
-
-    public List<PluginData> getPluginData() {
-        return Collections.singletonList(new PluginData("attachmentsList.json", attachments));
     }
 }

@@ -24,6 +24,10 @@
         <module>all-in-one</module>
     </modules>
 
+    <properties>
+        <allure.version>1.4.12</allure.version>
+    </properties>
+
     <build>
         <pluginManagement>
             <plugins>

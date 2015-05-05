@@ -1,9 +1,9 @@
 package com.github.baev;
 
 import ru.yandex.qatools.allure.data.AllureTestCase;
+import ru.yandex.qatools.allure.data.plugins.DefaultTabPlugin;
 import ru.yandex.qatools.allure.data.plugins.Plugin;
 import ru.yandex.qatools.allure.data.plugins.PluginData;
-import ru.yandex.qatools.allure.data.plugins.TabPlugin;
 import ru.yandex.qatools.allure.model.Status;
 
 import java.util.Collections;
@@ -16,14 +16,15 @@ import java.util.Map;
  *         Date: 17.04.15
  */
 @Plugin.Name("testCaseCloud")
-public class TestCaseCloudPlugin extends TabPlugin {
+public class TestCaseCloudPlugin extends DefaultTabPlugin {
 
-    private Map<String, Status> names = new HashMap<String, Status>();
+    private Map<String, Status> names = new HashMap<>();
 
     public void process(AllureTestCase data) {
         names.put(data.getTitle(), data.getStatus());
     }
 
+    @Override
     public List<PluginData> getPluginData() {
         return Collections.singletonList(new PluginData("testCaseCloud.json", names.entrySet()));
     }
